@@ -17,6 +17,21 @@ namespace SittingPlan.Web.Controllers
             return desks;
         }
 
+        public string AddP()
+        {
+            var p = new Person
+            {
+                Id = 1,
+                Name = "Ertug",
+                Surname = "Dilek",
+                Mail = "ertgdlk@gmail.com"
+            };
 
+            var personrepo = new PersonRepository();
+
+            var addp = personrepo.AddPerson(p);
+
+            return addp;
+        }
     }
 }
