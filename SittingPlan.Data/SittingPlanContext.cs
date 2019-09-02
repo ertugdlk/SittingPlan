@@ -12,5 +12,17 @@ namespace SittingPlan.Data
         }
 
         public DbSet<Desk> Desk { get; set; }
+
+        public DbSet<Chair> Chairs { get; set; }
+        public DbSet<Person> People { get; set; }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            //relations between entities
+            modelBuilder.Entity<Desk>().HasMany<Chair>(x => x.Chairs);
+            modelBuilder.Entity<Chair>().HasRequired<Person>(x => x.Person);
+        }
+
     }
 }

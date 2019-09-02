@@ -8,18 +8,12 @@ using System.Threading.Tasks;
 namespace SittingPlan.Data.Entities
 {
 
-    public class Desk
-    {
-        [Key]
-        public int Id { get; set; }
-        public string Name { get; set; }
-
-        public List<Chair> Chairs { get; set; }
-    }
-
-
-
-
+        public class Chair
+        {
+            [Key]
+            public int Id { get; set; }
+            public Person Person { get; set; }
+        }
 
     
 }
