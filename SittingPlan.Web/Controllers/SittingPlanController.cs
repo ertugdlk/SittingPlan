@@ -7,24 +7,24 @@ namespace SittingPlan.Web.Controllers
 {
     public class SittingPlanController : ApiController
     {
-        // GET api/sittingplan
-        public IEnumerable<Desk> Get()
-        {
-            var deskRepository = new DeskRepository();
+        //GET api/sittingplan
+        //public IEnumerable<Desk> Get()
+        //{
+        //    var deskRepository = new DeskRepository();
 
-            var desks = deskRepository.GetAll();
+        //    var desks = deskRepository.GetAll();
 
-            return desks;
-        }
+        //    return desks;
+        //}
 
-        public string AddP()
+        public IEnumerable<Person> Get()
         {
             var p = new Person
             {
-                Id = 1,
-                Name = "Ertug",
-                Surname = "Dilek",
-                Mail = "ertgdlk@gmail.com"
+                Id = 2,
+                Name = "ertug",
+                Surname = "dilek",
+                Mail = "ertgdlk@gmail.com",
             };
 
             var personrepo = new PersonRepository();

@@ -9,6 +9,8 @@ namespace SittingPlan.Data.Repositories
 {
     public class PersonRepository
     {
+
+
         public List<Person> GetAll()
         {
             var people = new List<Person>();
@@ -22,14 +24,17 @@ namespace SittingPlan.Data.Repositories
             return people;
         }
 
-        public string AddPerson(Person p)
+        public List<Person> AddPerson(Person p)
         {
+            var people = new List<Person>();
+
             using (var personContext = new SittingPlanContext())
             {
                 personContext.People.Add(p);
                 personContext.SaveChanges();
+                people = personContext.People.Where(x => x.Id > 0).OrderBy(x => x.Name).ToList();
             }
-            return "person created" + p;
+            return people;
         }
     }
 }
