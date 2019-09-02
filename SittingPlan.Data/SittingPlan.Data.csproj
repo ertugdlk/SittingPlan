@@ -48,7 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Chair.cs" />
     <Compile Include="Entities\Desk.cs" />
+    <Compile Include="Entities\Person.cs" />
     <Compile Include="Initializers\DeskDbInitializer.cs" />
     <Compile Include="Migrations\201909020818203_initial.cs" />
     <Compile Include="Migrations\201909020818203_initial.Designer.cs">
@@ -57,6 +59,10 @@
     <Compile Include="Migrations\201909020824469_withInitializer.cs" />
     <Compile Include="Migrations\201909020824469_withInitializer.Designer.cs">
       <DependentUpon>201909020824469_withInitializer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909021015419_personChairRelation.cs" />
+    <Compile Include="Migrations\201909021015419_personChairRelation.Designer.cs">
+      <DependentUpon>201909021015419_personChairRelation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\DeskRepository.cs" />
@@ -73,6 +79,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909020824469_withInitializer.resx">
       <DependentUpon>201909020824469_withInitializer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909021015419_personChairRelation.resx">
+      <DependentUpon>201909021015419_personChairRelation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
