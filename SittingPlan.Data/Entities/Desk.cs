@@ -15,6 +15,8 @@ namespace SittingPlan.Data.Entities
         public string Name { get; set; }
 
         public List<Chair> Chairs { get; set; }
+
+
     }
 
 

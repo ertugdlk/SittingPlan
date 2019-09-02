@@ -24,7 +24,7 @@ namespace SittingPlan.Data.Repositories
             return people;
         }
 
-        public List<Person> AddPerson(Person p)
+        public List<Person> AddPersonwithList(Person p)
         {
             var people = new List<Person>();
 

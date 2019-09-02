@@ -65,6 +65,7 @@
       <DependentUpon>201909021015419_personChairRelation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Repositories\ChairRepository.cs" />
     <Compile Include="Repositories\DeskRepository.cs" />
     <Compile Include="Repositories\PersonRepository.cs" />
     <Compile Include="SittingPlanContext.cs" />

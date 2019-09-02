@@ -19,6 +19,30 @@ namespace SittingPlan.Data.Repositories
             return desks;
         }
 
+        public void AddDesk()
+        {
+            var list = new List<Chair>();
+            var num = 1;
+            
+            using (var context = new SittingPlanContext())
+            {
+                list.Add(context.Chairs.Find(num));
+
+
+                var d = new Desk
+                {
+                    Id = 4,
+                    Name = "Desk 2",
+                    Chairs = list
+                };
+                context.Desk.Add(d);
+                context.SaveChanges();
+            };
+
+        }
+
+
+
 
     }
 }

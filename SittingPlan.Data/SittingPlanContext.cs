@@ -15,6 +15,8 @@ namespace SittingPlan.Data
 
         public DbSet<Chair> Chairs { get; set; }
         public DbSet<Person> People { get; set; }
+
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

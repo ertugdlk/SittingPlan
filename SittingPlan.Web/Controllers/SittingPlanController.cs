@@ -5,6 +5,7 @@ using System.Web.Http;
 
 namespace SittingPlan.Web.Controllers
 {
+
     public class SittingPlanController : ApiController
     {
         //GET api/sittingplan
@@ -19,19 +20,30 @@ namespace SittingPlan.Web.Controllers
 
         public IEnumerable<Person> Get()
         {
+            var p2 = new Person
+            {
+                Id = 1,
+                Name = "ertug ",
+                Surname = "dilek",
+                Mail = "ertgdl@gmail.com",
+            };
+
             var p = new Person
             {
                 Id = 2,
-                Name = "ertug",
-                Surname = "dilek",
-                Mail = "ertgdlk@gmail.com",
+                Name = "beytan ",
+                Surname = "kurtulus",
+                Mail = "beytan@gmail.com",
             };
-
-            var personrepo = new PersonRepository();
-
-            var addp = personrepo.AddPerson(p);
+            var personrepo = new PersonRepository();         
+            var addp = personrepo.AddPersonwithList(p2);
+            var deskrepo = new DeskRepository();
+            var chairrepo = new ChairRepository();
+            chairrepo.AddChair();
+            deskrepo.AddDesk();
 
             return addp;
         }
+
     }
 }
