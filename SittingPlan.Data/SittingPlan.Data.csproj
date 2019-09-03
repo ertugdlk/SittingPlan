@@ -69,6 +69,10 @@
     <Compile Include="Migrations\201909030653308_floorData.Designer.cs">
       <DependentUpon>201909030653308_floorData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909030824377_initializeAll.cs" />
+    <Compile Include="Migrations\201909030824377_initializeAll.Designer.cs">
+      <DependentUpon>201909030824377_initializeAll.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\ChairRepository.cs" />
     <Compile Include="Repositories\DeskRepository.cs" />
@@ -92,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909030653308_floorData.resx">
       <DependentUpon>201909030653308_floorData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909030824377_initializeAll.resx">
+      <DependentUpon>201909030824377_initializeAll.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

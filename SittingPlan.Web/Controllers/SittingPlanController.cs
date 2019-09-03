@@ -20,29 +20,14 @@ namespace SittingPlan.Web.Controllers
 
         public IEnumerable<Person> Get()
         {
-            var p2 = new Person
-            {
-                Id = 1,
-                Name = "ertug ",
-                Surname = "dilek",
-                Mail = "ertgdl@gmail.com",
-            };
-
-            var p = new Person
-            {
-                Id = 2,
-                Name = "beytan ",
-                Surname = "kurtulus",
-                Mail = "beytan@gmail.com",
-            };
             var personrepo = new PersonRepository();         
-            var addp = personrepo.AddPersonwithList(p2);
+            var getp = personrepo.GetAll();
             var deskrepo = new DeskRepository();
             var chairrepo = new ChairRepository();
-            chairrepo.AddChairwithPerson();
-            deskrepo.AddDesk();
+            //chairrepo.AddChairwithPerson();
+            //deskrepo.AddDesk();
 
-            return addp;
+            return getp;
         }
 
     }
