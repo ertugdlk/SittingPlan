@@ -65,6 +65,10 @@
     <Compile Include="Migrations\201909021015419_personChairRelation.Designer.cs">
       <DependentUpon>201909021015419_personChairRelation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909030653308_floorData.cs" />
+    <Compile Include="Migrations\201909030653308_floorData.Designer.cs">
+      <DependentUpon>201909030653308_floorData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\ChairRepository.cs" />
     <Compile Include="Repositories\DeskRepository.cs" />
@@ -85,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909021015419_personChairRelation.resx">
       <DependentUpon>201909021015419_personChairRelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909030653308_floorData.resx">
+      <DependentUpon>201909030653308_floorData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

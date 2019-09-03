@@ -15,7 +15,7 @@ namespace SittingPlan.Data.Repositories
         {
             var people = new List<Person>();
 
-            //GET REAL DESKS FROM DB WITH ENTITY FRAMEWORK
+            //GET REAL PEOPLE FROM DB WITH ENTITY FRAMEWORK
             using (var sittingPlanContext = new SittingPlanContext())
             {
                 people = sittingPlanContext.People.Where(p => p.Id > 0).OrderBy(p => p.Name).ToList();
@@ -36,5 +36,18 @@ namespace SittingPlan.Data.Repositories
             }
             return people;
         }
+
+        public void AddPerson(Person p)
+        {
+            using (var context = new SittingPlanContext())
+            {
+                context.People.Add(p);
+                context.SaveChanges();
+          
+            }
+
+
+        }
+
     }
 }
