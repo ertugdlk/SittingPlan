@@ -26,13 +26,11 @@ namespace SittingPlan.Data.Repositories
         {
             using (var context = new SittingPlanContext())
             {
-                var p = context.People.FirstOrDefault();
                 var d = context.Desk.FirstOrDefault();
 
                 var c = new Chair
                 {
                     Id = 1,
-                    Person = p,
                     
 
                 };
@@ -40,7 +38,6 @@ namespace SittingPlan.Data.Repositories
                 var c2 = new Chair
                 {
                     Id = 2,
-                    Person = p,
 
                 };
 
@@ -48,7 +45,23 @@ namespace SittingPlan.Data.Repositories
                 context.SaveChanges();
             };
 
+
         }
+
+        public void addPersontoChair(Person person , Chair c)
+        {
+            using (var context = new SittingPlanContext())
+            {
+                var chair = context.Chairs.Find(c.Id);
+                chair.Person = person;
+                context.SaveChanges();
+            }
+
+                
+
+        }
+
+
 
     }
 }

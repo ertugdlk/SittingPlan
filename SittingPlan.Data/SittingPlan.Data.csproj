@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Entities\Chair.cs" />
     <Compile Include="Entities\Desk.cs" />
+    <Compile Include="Entities\Floor.cs" />
     <Compile Include="Entities\Person.cs" />
     <Compile Include="Initializers\DeskDbInitializer.cs" />
     <Compile Include="Migrations\201909020818203_initial.cs" />

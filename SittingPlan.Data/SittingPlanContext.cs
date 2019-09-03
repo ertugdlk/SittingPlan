@@ -11,6 +11,8 @@ namespace SittingPlan.Data
             Database.SetInitializer(new SittingPlanInitializer());
         }
 
+        public DbSet<Floor> Floors { get; set; }
+
         public DbSet<Desk> Desk { get; set; }
 
         public DbSet<Chair> Chairs { get; set; }
@@ -23,6 +25,8 @@ namespace SittingPlan.Data
 
             //relations between entities
             modelBuilder.Entity<Desk>().HasMany<Chair>(x => x.Chairs);
+            modelBuilder.Entity<Floor>().HasMany<Desk>(x => x.Desks);
+
             modelBuilder.Entity<Chair>().HasRequired<Person>(x => x.Person);
         }
 

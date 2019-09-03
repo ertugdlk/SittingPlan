@@ -39,7 +39,7 @@ namespace SittingPlan.Web.Controllers
             var addp = personrepo.AddPersonwithList(p2);
             var deskrepo = new DeskRepository();
             var chairrepo = new ChairRepository();
-            chairrepo.AddChair();
+            chairrepo.AddChairwithPerson();
             deskrepo.AddDesk();
 
             return addp;
