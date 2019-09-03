@@ -10,7 +10,7 @@ namespace SittingPlan.Data.Repositories
     public class PersonRepository
     {
 
-
+        //list of people
         public List<Person> GetAll()
         {
             var people = new List<Person>();
@@ -24,6 +24,7 @@ namespace SittingPlan.Data.Repositories
             return people;
         }
 
+        //add person with return people
         public List<Person> AddPersonwithList(Person p)
         {
             var people = new List<Person>();
@@ -37,15 +38,25 @@ namespace SittingPlan.Data.Repositories
             return people;
         }
 
+        //add person with info
         public void AddPerson(Person p)
         {
             using (var context = new SittingPlanContext())
             {
                 context.People.Add(p);
-                context.SaveChanges();
-          
+                context.SaveChanges();         
             }
+        }
+        //create person without id
+        public void AddPerson(string name, string surname, string mail)
+        {
+            var p = new Person()
+            {
+                Name = name,
+                Surname = surname,
+                Mail = mail
 
+            };
 
         }
 

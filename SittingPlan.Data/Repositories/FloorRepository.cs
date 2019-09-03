@@ -23,11 +23,18 @@ namespace SittingPlan.Data.Repositories
             return floors;
         }
 
-        
+        public void AddFloor()
+        {
+            var floor = new Floor();
+            using (var context = new SittingPlanContext())
+            {
+                context.Floors.Add(floor);
 
+                context.SaveChanges();
 
+            }
 
-
+        }
 
     }
 }

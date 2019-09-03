@@ -162,6 +162,9 @@ namespace SittingPlan.Data.Initializers
                 Desks = listff
 
             });
+
+
+
             context.Floors.AddRange(initialFloors);
 
 

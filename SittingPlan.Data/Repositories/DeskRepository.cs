@@ -6,6 +6,8 @@ namespace SittingPlan.Data.Repositories
 {
     public class DeskRepository
     {
+
+        //list of desks
         public List<Desk> GetAll()
         {
             var desks = new List<Desk>();
@@ -19,6 +21,7 @@ namespace SittingPlan.Data.Repositories
             return desks;
         }
 
+        //add desk with info
         public void AddDesk(Desk d)
         { 
           
@@ -31,6 +34,18 @@ namespace SittingPlan.Data.Repositories
 
         }
 
+        //create empty Desk
+        public void AddDesk()
+        {
+            var desk = new Desk();
+            using(var context = new SittingPlanContext())
+            {
+                context.Desk.Add(desk);
+                context.SaveChanges();
+
+            }
+
+        }
 
 
 

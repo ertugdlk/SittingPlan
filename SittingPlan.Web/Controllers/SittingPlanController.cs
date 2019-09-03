@@ -22,8 +22,10 @@ namespace SittingPlan.Web.Controllers
         {
             var personrepo = new PersonRepository();         
             var getp = personrepo.GetAll();
-            var deskrepo = new DeskRepository();
-            var chairrepo = new ChairRepository();
+            //var deskrepo = new DeskRepository();
+            //var chairrepo = new ChairRepository();
+            var repofloor = new FloorRepository();
+            repofloor.AddFloor();
             //chairrepo.AddChairwithPerson();
             //deskrepo.AddDesk();
 

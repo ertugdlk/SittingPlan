@@ -9,6 +9,8 @@ namespace SittingPlan.Data.Repositories
 {
     public class ChairRepository
     {
+
+        //list of chairs
         public List<Chair> GetAll()
         {
             var chairs = new List<Chair>();
@@ -22,32 +24,31 @@ namespace SittingPlan.Data.Repositories
             return chairs;
         }
 
-        public  void AddChair()
+
+        //add chair with information
+        public  void AddChair(Chair c)
         {
             using (var context = new SittingPlanContext())
             {
-                var d = context.Desk.FirstOrDefault();
-
-                var c = new Chair
-                {
-                    Id = 1,
-                    
-
-                };
-
-                var c2 = new Chair
-                {
-                    Id = 2,
-
-                };
-
                 context.Chairs.Add(c);
                 context.SaveChanges();
             };
-
-
         }
 
+        //empty chair add
+        public void AddEmptyChair()
+        {
+            var chair = new Chair();
+
+            using (var context = new SittingPlanContext())
+            {
+                context.Chairs.Add(chair);
+                context.SaveChanges();
+            }
+        }
+
+
+        //add person to chair
         public void addPersontoChair(Person person , Chair c)
         {
             using (var context = new SittingPlanContext())
