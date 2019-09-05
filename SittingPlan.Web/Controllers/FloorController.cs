@@ -1,4 +1,5 @@
-﻿using SittingPlan.Data.Entities;
+﻿using SittingPlan.Data;
+using SittingPlan.Data.Entities;
 using SittingPlan.Data.Repositories;
 using System;
 using System.Collections.Generic;
@@ -11,11 +12,16 @@ namespace SittingPlan.Web.Controllers
 {
     public class FloorController : ApiController
     {
+        FloorRepository repofloor = new FloorRepository();
+
         public IEnumerable<Floor> Get()
         {
-            var repofloor = new FloorRepository();
-            var getfloors = repofloor.GetAll();
-            return getfloors;
+            return repofloor.GetAll();
+        }
+
+        public void Post([FromBody] Floor floor)
+        {
+            repofloor.AddFloor(floor.Name);     
         }
 
     }
