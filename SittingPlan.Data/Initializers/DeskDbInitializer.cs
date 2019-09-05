@@ -151,6 +151,7 @@ namespace SittingPlan.Data.Initializers
             initialFloors.Add(new Floor
             {
                 Id = 1,
+                Name = "Lobby",
                 Desks = listf
 
             });
@@ -159,7 +160,9 @@ namespace SittingPlan.Data.Initializers
             initialFloors.Add(new Floor
             {
                 Id = 2,
+                Name = "IT Floor",
                 Desks = listff
+
 
             });
 

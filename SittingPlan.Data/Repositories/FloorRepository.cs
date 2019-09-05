@@ -23,9 +23,12 @@ namespace SittingPlan.Data.Repositories
             return floors;
         }
 
-        public void AddFloor()
+        public void AddFloor(string name )
         {
-            var floor = new Floor();
+            var floor = new Floor()
+            {
+                Name = name
+            };
             using (var context = new SittingPlanContext())
             {
                 context.Floors.Add(floor);

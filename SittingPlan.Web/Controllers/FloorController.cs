@@ -14,8 +14,8 @@ namespace SittingPlan.Web.Controllers
         public IEnumerable<Floor> Get()
         {
             var repofloor = new FloorRepository();
-            var floors = repofloor.GetAll();
-            return floors;
+            var getfloors = repofloor.GetAll();
+            return getfloors;
 
         }
 
