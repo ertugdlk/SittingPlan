@@ -18,7 +18,7 @@ namespace SittingPlan.Data.Repositories
             //GET REAL FLOORS FROM DB WITH ENTITY FRAMEWORK
             using (var Context = new SittingPlanContext())
             {
-                floors = Context.Floors.Where(p => p.Id > 0).OrderBy(p => p.Id).Include(p => p.Desks).Include(x => x.).ToList();
+                floors = Context.Floors.Where(p => p.Id > 0).OrderBy(p => p.Id).Include(p => p.Desks).Include(x => x.Desks).ToList();
             }
 
             return floors;
