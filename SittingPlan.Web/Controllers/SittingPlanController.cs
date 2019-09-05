@@ -24,11 +24,10 @@ namespace SittingPlan.Web.Controllers
             var getp = personrepo.GetAll();
             //var deskrepo = new DeskRepository();
             //var chairrepo = new ChairRepository();
-            var repofloor = new FloorRepository();
-            repofloor.AddFloor("IK");
+            //var repofloor = new FloorRepository();
+            //repofloor.AddFloor("IK");
             //chairrepo.AddChairwithPerson();
             //deskrepo.AddDesk();
-
             return getp;
         }
 

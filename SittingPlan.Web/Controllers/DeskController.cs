@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SittingPlan.Data.Entities;
+using SittingPlan.Data.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,5 +11,12 @@ namespace SittingPlan.Web.Controllers
 {
     public class DeskController : ApiController
     {
+
+        public IEnumerable<Desk> Get()
+        {
+            var repodesk = new DeskRepository();
+            var getdesks = repodesk.GetAll();
+            return getdesks;
+        }
     }
 }

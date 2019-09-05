@@ -16,7 +16,6 @@ namespace SittingPlan.Web.Controllers
             var repofloor = new FloorRepository();
             var getfloors = repofloor.GetAll();
             return getfloors;
-
         }
 
     }
