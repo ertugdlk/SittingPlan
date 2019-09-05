@@ -1,6 +1,7 @@
 ﻿using SittingPlan.Data.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace SittingPlan.Data.Repositories
             //GET REAL FLOORS FROM DB WITH ENTITY FRAMEWORK
             using (var Context = new SittingPlanContext())
             {
-                floors = Context.Floors.Where(p => p.Id > 0).OrderBy(p => p.Id).ToList();
+                floors = Context.Floors.Where(p => p.Id > 0).OrderBy(p => p.Id).Include(p => p.Desks).Include(x => x.).ToList();
             }
 
             return floors;

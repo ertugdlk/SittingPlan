@@ -1,6 +1,7 @@
 ﻿using SittingPlan.Data.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,7 @@ namespace SittingPlan.Data.Repositories
             //GET REAL DESKS FROM DB WITH ENTITY FRAMEWORK
             using (var context = new SittingPlanContext())
             {
-                chairs = context.Chairs.Where(x => x.Id > 0).OrderBy(x => x.Person.Name).ToList();
+                chairs = context.Chairs.Where(x => x.Id > 0).OrderBy(x => x.Person.Name).Include(x => x.Person).ToList();
             }
 
             return chairs;
