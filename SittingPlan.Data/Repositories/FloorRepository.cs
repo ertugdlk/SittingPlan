@@ -24,6 +24,18 @@ namespace SittingPlan.Data.Repositories
             return floors;
         }
 
+
+        public List<Desk> GetDesks(int floorid)
+        {
+            var desks = new List<Desk>();
+            using (var Context = new SittingPlanContext())
+            {
+                desks = Context.Desk.Where(p => p.FloorId == floorid).OrderBy(p => p.Id).ToList();
+            }
+
+            return desks;
+        }
+
         public void AddFloor(string name )
         {
             var floor = new Floor()

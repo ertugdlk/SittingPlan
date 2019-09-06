@@ -8,28 +8,40 @@ namespace SittingPlan.Web.Controllers
 
     public class SittingPlanController : ApiController
     {
-        //GET api/sittingplan
-        //public IEnumerable<Desk> Get()
-        //{
-        //    var deskRepository = new DeskRepository();
 
-        //    var desks = deskRepository.GetAll();
-
-        //    return desks;
-        //}
+        PersonRepository personrepo = new PersonRepository();
 
         public IEnumerable<Person> Get()
         {
-            var personrepo = new PersonRepository();         
             var getp = personrepo.GetAll();
-            //var deskrepo = new DeskRepository();
-            //var chairrepo = new ChairRepository();
-            //var repofloor = new FloorRepository();
-            //repofloor.AddFloor("IK");
-            //chairrepo.AddChairwithPerson();
-            //deskrepo.AddDesk();
             return getp;
         }
+
+        //public IEnumerable<Person> Get(int id)
+        //{
+        //    var getp = personrepo.GetAll
+
+        //    return getp;
+
+        //}
+
+        [HttpPost]
+        public IHttpActionResult Post([FromBody]PersonClass info)
+        {
+            personrepo.AddPerson(info.Name, info.Surname, info.Mail);
+            return Ok(info);
+        }
+
+        public class PersonClass{
+
+            public string Name { get; set; }
+            public string Surname { get; set; }
+            public string Mail { get; set; }
+
+
+
+        }
+
 
     }
 }

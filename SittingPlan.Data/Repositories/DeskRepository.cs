@@ -22,6 +22,20 @@ namespace SittingPlan.Data.Repositories
             return desks;
         }
 
+        //list o
+        public List<Chair> GetChairs(int deskid)
+        {
+            var chairs = new List<Chair>();
+
+            using (var context  = new SittingPlanContext())
+            {
+                chairs = context.Chairs.Where(p => p.DeskId == deskid).OrderBy(p => p.Id).ToList();
+
+            }
+
+            return chairs;
+        }
+
         //add desk with info
         public void AddDesk(Desk d)
         { 

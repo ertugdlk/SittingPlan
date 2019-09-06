@@ -18,6 +18,12 @@ namespace SittingPlan.Web.Controllers
             var getdesks = repodesk.GetAll();
             return getdesks;
         }
+        //desk list of selected floor
+        public IEnumerable<Chair> Get(int deskid)
+        { 
+            return repodesk.GetChairs(deskid);
+        }
+
 
         [HttpPost]
         public IHttpActionResult Post([FromBody]DeskClass info)

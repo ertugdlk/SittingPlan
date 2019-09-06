@@ -24,6 +24,8 @@ namespace SittingPlan.Data.Repositories
             return people;
         }
 
+ 
+
         //add person with return people
         public List<Person> AddPersonwithList(Person p)
         {
