@@ -60,6 +60,12 @@ namespace SittingPlan.Data.Repositories
 
             };
 
+            using (var context = new SittingPlanContext())
+            {
+                context.People.Add(p);
+                context.SaveChanges();
+            }
+
         }
 
     }
