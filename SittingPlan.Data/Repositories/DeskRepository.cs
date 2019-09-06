@@ -16,7 +16,7 @@ namespace SittingPlan.Data.Repositories
             //GET REAL DESKS FROM DB WITH ENTITY FRAMEWORK
             using (var sittingPlanContext = new SittingPlanContext())
             {
-                desks = sittingPlanContext.Desk.Where(p => p.Id > 0).OrderBy(p => p.Name).Include(p => p.Chairs).ToList();
+                desks = sittingPlanContext.Desk.Where(p => p.Id > 0).OrderBy(p => p.Name).ToList();
             }
 
             return desks;
@@ -40,11 +40,11 @@ namespace SittingPlan.Data.Repositories
         {
             var desk = new Desk();
             desk.Name = name;
-
+            desk.FloorId = floorid;
             var floor = new Floor();
             using(var context = new SittingPlanContext()) {
-                floor = context.Floors.Find(floorid);
-                floor.Desks.Add(desk);
+                //floor = context.Floors.Find(floorid);
+                //floor.Desks.Add(desk);
                 context.Desk.Add(desk);
                 //context.Database.ExecuteSqlCommand("UPDATE dbo.Desks SET Floor_Id = "+ floorid +"  WHERE Id = "+ desk.Id + " ");
                 context.SaveChanges();

@@ -22,7 +22,7 @@ namespace SittingPlan.Web.Controllers
         [HttpPost]
         public IHttpActionResult Post([FromBody]DeskClass info)
         {
-         var floorrepo  = new   FloorRepository();
+            var floorrepo  = new   FloorRepository();
             repodesk.AddDesk(info.Name , info.FloorId);
             return Ok(info.Name);
         }
