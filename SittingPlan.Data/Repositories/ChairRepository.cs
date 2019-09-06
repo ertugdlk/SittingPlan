@@ -51,11 +51,12 @@ namespace SittingPlan.Data.Repositories
 
 
         //add person to chair
-        public void addPersontoChair(Person person , Chair c)
+        public void addPersontoChair(int personid , int chairid)
         {
             using (var context = new SittingPlanContext())
             {
-                var chair = context.Chairs.Find(c.Id);
+                var chair = context.Chairs.Find(chairid);
+                var person = context.People.Find(personid);
                 chair.Person = person;
                 context.SaveChanges();
             }

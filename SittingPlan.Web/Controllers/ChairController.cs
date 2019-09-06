@@ -25,16 +25,15 @@ namespace SittingPlan.Web.Controllers
         [HttpPost]
         public IHttpActionResult Post([FromBody]ChairClass info)
         {
-            var chair = new Chair();
-            chair.DeskId = info.DeskId;
-
-            repochair.AddChair(chair);
+            repochair.AddEmptyChair(info.DeskId);
             return Ok(info.DeskId);
         }
 
         public class ChairClass
         {
             public int DeskId { get; set; }
+
+            public int PersonId { get; set; }
         }
 
 
