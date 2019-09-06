@@ -36,12 +36,17 @@ namespace SittingPlan.Data.Repositories
         }
 
         //create empty Desk
-        public void AddDesk()
+        public void AddDesk(string name , int floorid)
         {
             var desk = new Desk();
-            using(var context = new SittingPlanContext())
-            {
+            desk.Name = name;
+
+            var floor = new Floor();
+            using(var context = new SittingPlanContext()) {
+                floor = context.Floors.Find(floorid);
+                floor.Desks.Add(desk);
                 context.Desk.Add(desk);
+                //context.Database.ExecuteSqlCommand("UPDATE dbo.Desks SET Floor_Id = "+ floorid +"  WHERE Id = "+ desk.Id + " ");
                 context.SaveChanges();
 
             }

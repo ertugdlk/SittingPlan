@@ -25,7 +25,8 @@ namespace SittingPlan.Data
 
             //relations between entities
             modelBuilder.Entity<Desk>().HasMany<Chair>(x => x.Chairs);
-            modelBuilder.Entity<Floor>().HasMany<Desk>(x => x.Desks);
+            //modelBuilder.Entity<Floor>().HasMany<Desk>(x => x.Desks);
+            modelBuilder.Entity<Desk>().HasRequired<Floor>(x => x.Floor).WithMany<Desk>().HasForeignKey(x => x.FloorId);
 
             modelBuilder.Entity<Chair>().HasRequired<Person>(x => x.Person);
         }

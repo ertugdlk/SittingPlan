@@ -20,13 +20,13 @@ namespace SittingPlan.Web.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult Post([FromBody]asd name)
+        public IHttpActionResult Post([FromBody]FloorClass name)
         {
             repofloor.AddFloor(name.Name);
             return Ok(name.Name);
         }
 
-        public class asd
+        public class FloorClass
         {
             public string Name { get; set; }
         }
