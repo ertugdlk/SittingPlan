@@ -24,11 +24,12 @@ namespace SittingPlan.Data
             base.OnModelCreating(modelBuilder);
 
             //relations between entities
-            modelBuilder.Entity<Desk>().HasMany<Chair>(x => x.Chairs);
+            //modelBuilder.Entity<Desk>().HasMany<Chair>(x => x.Chairs);
             //modelBuilder.Entity<Floor>().HasMany<Desk>(x => x.Desks);
-            modelBuilder.Entity<Desk>().HasRequired<Floor>(x => x.Floor).WithMany<Desk>().HasForeignKey(x => x.FloorId);
+            modelBuilder.Entity<Chair>().HasRequired<Desk>(x => x.Desk).WithMany(x => x.Chairs).HasForeignKey(x => x.DeskId);
+            modelBuilder.Entity<Desk>().HasRequired<Floor>(x => x.Floor).WithMany(x => x.Desks).HasForeignKey(x => x.FloorId);
 
-            modelBuilder.Entity<Chair>().HasRequired<Person>(x => x.Person);
+            //modelBuilder.Entity<Chair>().HasRequired<Person>(x => x.Person);
         }
 
     }

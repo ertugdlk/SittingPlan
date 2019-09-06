@@ -12,7 +12,7 @@ namespace SittingPlan.Data.Entities
 
         public string Name { get; set; }
 
-        public virtual List<Desk> Desks { get; set; }
+        public List<Desk> Desks { get; set; }
 
         public Floor()
         {
