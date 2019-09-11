@@ -31,13 +31,23 @@ namespace SittingPlan.Web.Controllers
             return Ok();
         }
 
+        [HttpPost]
+        public IHttpActionResult Seat([FromBody]ChairWithPerson info)
+        {
+            repochair.addPersontoChair(info.personid, info.chairid );
+            return Ok();
+        }
 
+        public class ChairWithPerson
+        {
+
+            public int chairid { get; set; }
+            public int personid { get; set; }
+        }
 
         public class ChairClass
         {
             public int DeskId { get; set; }
-
-            public int PersonId { get; set; }
         }
 
 

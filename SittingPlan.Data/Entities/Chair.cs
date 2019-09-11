@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace SittingPlan.Data.Entities
 {
-
         public class Chair
         {
             [Key]
@@ -15,8 +14,5 @@ namespace SittingPlan.Data.Entities
             public int DeskId { get; set; }
             public Person Person { get; set; }
             public Desk Desk { get; set; }
-
-    }
-
-    
+    }   
 }
