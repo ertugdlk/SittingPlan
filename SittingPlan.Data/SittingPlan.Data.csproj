@@ -81,6 +81,10 @@
     <Compile Include="Migrations\201909060755489_changesAboutRelations.Designer.cs">
       <DependentUpon>201909060755489_changesAboutRelations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909110847443_Change2.cs" />
+    <Compile Include="Migrations\201909110847443_Change2.Designer.cs">
+      <DependentUpon>201909110847443_Change2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\ChairRepository.cs" />
     <Compile Include="Repositories\DeskRepository.cs" />
@@ -114,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909060755489_changesAboutRelations.resx">
       <DependentUpon>201909060755489_changesAboutRelations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909110847443_Change2.resx">
+      <DependentUpon>201909110847443_Change2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

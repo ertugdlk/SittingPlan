@@ -6,9 +6,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace SittingPlan.Web.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ChairController : ApiController
     {
         ChairRepository repochair = new ChairRepository();
@@ -26,8 +28,10 @@ namespace SittingPlan.Web.Controllers
         public IHttpActionResult Post([FromBody]ChairClass info)
         {
             repochair.AddEmptyChair(info.DeskId);
-            return Ok(info.DeskId);
+            return Ok();
         }
+
+
 
         public class ChairClass
         {

@@ -7,9 +7,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace SittingPlan.Web.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class DeskController : ApiController
     {
         DeskRepository repodesk = new DeskRepository();
@@ -30,7 +32,7 @@ namespace SittingPlan.Web.Controllers
         {
             var floorrepo  = new   FloorRepository();
             repodesk.AddDesk(info.Name , info.FloorId);
-            return Ok(info.Name);
+            return Ok();
         }
 
         public class DeskClass

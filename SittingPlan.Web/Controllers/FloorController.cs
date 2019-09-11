@@ -7,9 +7,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace SittingPlan.Web.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class FloorController : ApiController
     {
         FloorRepository repofloor = new FloorRepository();
@@ -32,7 +34,7 @@ namespace SittingPlan.Web.Controllers
         public IHttpActionResult Post([FromBody]FloorClass name)
         {
             repofloor.AddFloor(name.Name);
-            return Ok(name.Name);
+            return Ok();
         }
 
         public class FloorClass
