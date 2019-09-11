@@ -7,18 +7,15 @@ namespace SittingPlan.Data.Repositories
 {
     public class DeskRepository
     {
-
         //list of desks
         public List<Desk> GetAll()
         {
             var desks = new List<Desk>();
-
             //GET REAL DESKS FROM DB WITH ENTITY FRAMEWORK
             using (var sittingPlanContext = new SittingPlanContext())
             {
                 desks = sittingPlanContext.Desk.Where(p => p.Id > 0).OrderBy(p => p.Name).ToList();
             }
-
             return desks;
         }
 
@@ -26,27 +23,21 @@ namespace SittingPlan.Data.Repositories
         public List<Chair> GetChairs(int deskid)
         {
             var chairs = new List<Chair>();
-
             using (var context  = new SittingPlanContext())
             {
                 chairs = context.Chairs.Where(p => p.DeskId == deskid).OrderBy(p => p.Id).ToList();
-
             }
-
             return chairs;
         }
 
         //add desk with info
         public void AddDesk(Desk d)
-        { 
-          
+        {          
             using (var context = new SittingPlanContext())
             {
-
                 context.Desk.Add(d);
                 context.SaveChanges();
             };
-
         }
 
         //create empty Desk
@@ -56,19 +47,12 @@ namespace SittingPlan.Data.Repositories
             desk.Name = name;
             desk.FloorId = floorid;
             var floor = new Floor();
-            using(var context = new SittingPlanContext()) {
-                //floor = context.Floors.Find(floorid);
-                //floor.Desks.Add(desk);
+            using (var context = new SittingPlanContext())
+            {
                 context.Desk.Add(desk);
-                //context.Database.ExecuteSqlCommand("UPDATE dbo.Desks SET Floor_Id = "+ floorid +"  WHERE Id = "+ desk.Id + " ");
                 context.SaveChanges();
-
             }
-
         }
-
-
-
     }
 }
     

@@ -21,15 +21,14 @@ namespace SittingPlan.Web.Controllers
             return repofloor.GetAll();
         }
 
-        //desk list of selected floor
+        //Desk list of selected floorid
         public IEnumerable<Desk> Get(int floorid)
         {
          
             return repofloor.GetDesks(floorid); ;
         }
 
-
-
+        //Floor Generate
         [HttpPost]
         public IHttpActionResult Post([FromBody]FloorClass name)
         {

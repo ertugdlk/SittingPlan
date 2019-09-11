@@ -20,13 +20,14 @@ namespace SittingPlan.Web.Controllers
             var getdesks = repodesk.GetAll();
             return getdesks;
         }
+
         //desk list of selected floor
         public IEnumerable<Chair> Get(int deskid)
         { 
             return repodesk.GetChairs(deskid);
         }
 
-
+        //Desk Generate with floorid
         [HttpPost]
         public IHttpActionResult Post([FromBody]DeskClass info)
         {
@@ -38,7 +39,6 @@ namespace SittingPlan.Web.Controllers
         public class DeskClass
         {
             public string Name { get; set; }
-
             public int FloorId { get; set; }
         }
     }

@@ -10,21 +10,17 @@ namespace SittingPlan.Data.Repositories
 {
     public class ChairRepository
     {
-
         //list of chairs
         public List<Chair> GetAll()
         {
             var chairs = new List<Chair>();
-
             //GET REAL DESKS FROM DB WITH ENTITY FRAMEWORK
             using (var context = new SittingPlanContext())
             {
                 chairs = context.Chairs.Where(x => x.Id > 0).Include(p=> p.Person).OrderBy(x => x.Person.Name).ToList();
             }
-
             return chairs;
         }
-
 
         //add chair with information
         public  void AddChair(Chair c)
@@ -41,14 +37,12 @@ namespace SittingPlan.Data.Repositories
         {
             var chair = new Chair();
             chair.DeskId = deskId;
-
             using (var context = new SittingPlanContext())
             {
                 context.Chairs.Add(chair);
                 context.SaveChanges();
             }
         }
-
 
         //add person to chair
         public void addPersontoChair(int personid , int chairid)
@@ -60,12 +54,6 @@ namespace SittingPlan.Data.Repositories
                 chair.Person = person;
                 context.SaveChanges();
             }
-
-                
-
         }
-
-
-
     }
 }

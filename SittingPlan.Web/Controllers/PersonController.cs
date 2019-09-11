@@ -11,12 +11,14 @@ namespace SittingPlan.Web.Controllers
     {
         PersonRepository personrepo = new PersonRepository();
 
+        //People list
         public IEnumerable<Person> Get()
         {
             var getp = personrepo.GetAll();
             return getp;
         }
 
+        //Person Generate
         [HttpPost]
         public IHttpActionResult Post([FromBody]PersonClass info)
         {
@@ -25,7 +27,6 @@ namespace SittingPlan.Web.Controllers
         }
 
         public class PersonClass{
-
             public string Name { get; set; }
             public string Surname { get; set; }
             public string Mail { get; set; }

@@ -12,15 +12,12 @@ namespace SittingPlan.Data.Repositories
     {
         public List<Floor> GetAll()
         {
-
             var floors = new List<Floor>();
-
             //GET REAL FLOORS FROM DB WITH ENTITY FRAMEWORK
             using (var Context = new SittingPlanContext())
             {
                 floors = Context.Floors.Where(p => p.Id > 0).OrderBy(p => p.Id).ToList();
             }
-
             return floors;
         }
 
@@ -32,7 +29,6 @@ namespace SittingPlan.Data.Repositories
             {
                 desks = Context.Desk.Where(p => p.FloorId == floorid).OrderBy(p => p.Id).ToList();
             }
-
             return desks;
         }
 
@@ -47,10 +43,7 @@ namespace SittingPlan.Data.Repositories
                 context.Floors.Add(floor);
 
                 context.SaveChanges();
-
             }
-
         }
-
     }
 }
