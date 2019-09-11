@@ -7,7 +7,7 @@ using System.Web.Http.Cors;
 namespace SittingPlan.Web.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class SittingPlanController : ApiController
+    public class PersonController : ApiController
     {
         PersonRepository personrepo = new PersonRepository();
 
