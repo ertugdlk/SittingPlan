@@ -52,39 +52,39 @@ namespace SittingPlan.Data.Initializers
 
             context.People.AddRange(initialPeople);
 
-            var initialChair = new List<Chair>();
+            //var initialChair = new List<Chair>();
 
-            initialChair.Add(new Chair
-            {
-                Id = 1,
-                Person = context.People.Find(2),
-            });
+            //initialChair.Add(new Chair
+            //{
+            //    Id = 1,
+            //    Person = context.People.Find(2),
+            //});
 
-            initialChair.Add(new Chair
-            {
-                Id = 2,
-                Person = context.People.Find(4),
-            });
+            //initialChair.Add(new Chair
+            //{
+            //    Id = 2,
+            //    Person = context.People.Find(4),
+            //});
 
-            initialChair.Add(new Chair
-            {
-                Id = 3,
-                Person = context.People.Find(1),
-            });
+            //initialChair.Add(new Chair
+            //{
+            //    Id = 3,
+            //    Person = context.People.Find(1),
+            //});
 
-            initialChair.Add(new Chair
-            {
-                Id = 4,
-                Person = context.People.Find(5),
-            });
+            //initialChair.Add(new Chair
+            //{
+            //    Id = 4,
+            //    Person = context.People.Find(5),
+            //});
 
-            initialChair.Add(new Chair
-            {
-                Id = 5,
-                Person = context.People.Find(3),
-            });
+            //initialChair.Add(new Chair
+            //{
+            //    Id = 5,
+            //    Person = context.People.Find(3),
+            //});
 
-            context.Chairs.AddRange(initialChair);
+            //context.Chairs.AddRange(initialChair);
 
             var initialDesks = new List<Desk>();
             var list1 = new List<Chair>
@@ -106,21 +106,21 @@ namespace SittingPlan.Data.Initializers
             initialDesks.Add(new Desk
             {
                 Id = 1,
-                Name = "Desk 1",
+                Name = "Fishbone",
                 Chairs = list1
             });
 
             initialDesks.Add(new Desk
             {
                 Id = 2,
-                Name = "Desk 2",
+                Name = "Crossfire",
                 Chairs = list2
             });
 
             initialDesks.Add(new Desk
             {
                 Id = 3,
-                Name = "Desk 3",
+                Name = "Backbone",
                 Chairs = list3
             });
 

@@ -1,9 +1,9 @@
-namespace SittingPlan.Data.Migrations
+namespace SittingPlan.Data.Migrations.MyHistory
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Change2 : DbMigration
+    public partial class withInitializer : DbMigration
     {
         public override void Up()
         {

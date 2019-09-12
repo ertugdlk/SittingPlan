@@ -17,7 +17,7 @@ namespace SittingPlan.Data.Repositories
             //GET REAL DESKS FROM DB WITH ENTITY FRAMEWORK
             using (var context = new SittingPlanContext())
             {
-                chairs = context.Chairs.Where(x => x.Id > 0).Include(p=> p.Person).OrderBy(x => x.Person.Name).ToList();
+                //chairs = context.Chairs.Where(x => x.Id > 0).Include(p=> p.Person).OrderBy(x => x.Person.Name).ToList();
             }
             return chairs;
         }
@@ -51,7 +51,7 @@ namespace SittingPlan.Data.Repositories
             {
                 var chair = context.Chairs.Find(chairid);
                 var person = context.People.Find(personid);
-                chair.Person = person;
+                //chair.Person = person;
                 context.SaveChanges();
             }
         }

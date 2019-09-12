@@ -52,38 +52,11 @@
     <Compile Include="Entities\Desk.cs" />
     <Compile Include="Entities\Floor.cs" />
     <Compile Include="Entities\Person.cs" />
+    <Compile Include="Entities\SittingPeople.cs" />
     <Compile Include="Initializers\DeskDbInitializer.cs" />
-    <Compile Include="Migrations\201909020818203_initial.cs" />
-    <Compile Include="Migrations\201909020818203_initial.Designer.cs">
-      <DependentUpon>201909020818203_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909020824469_withInitializer.cs" />
-    <Compile Include="Migrations\201909020824469_withInitializer.Designer.cs">
-      <DependentUpon>201909020824469_withInitializer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909021015419_personChairRelation.cs" />
-    <Compile Include="Migrations\201909021015419_personChairRelation.Designer.cs">
-      <DependentUpon>201909021015419_personChairRelation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909030653308_floorData.cs" />
-    <Compile Include="Migrations\201909030653308_floorData.Designer.cs">
-      <DependentUpon>201909030653308_floorData.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909030824377_initializeAll.cs" />
-    <Compile Include="Migrations\201909030824377_initializeAll.Designer.cs">
-      <DependentUpon>201909030824377_initializeAll.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909050747243_newFloorAttribute.cs" />
-    <Compile Include="Migrations\201909050747243_newFloorAttribute.Designer.cs">
-      <DependentUpon>201909050747243_newFloorAttribute.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909060755489_changesAboutRelations.cs" />
-    <Compile Include="Migrations\201909060755489_changesAboutRelations.Designer.cs">
-      <DependentUpon>201909060755489_changesAboutRelations.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909110847443_Change2.cs" />
-    <Compile Include="Migrations\201909110847443_Change2.Designer.cs">
-      <DependentUpon>201909110847443_Change2.cs</DependentUpon>
+    <Compile Include="Migrations\201909121439119_initial.cs" />
+    <Compile Include="Migrations\201909121439119_initial.Designer.cs">
+      <DependentUpon>201909121439119_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\ChairRepository.cs" />
@@ -98,29 +71,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201909020818203_initial.resx">
-      <DependentUpon>201909020818203_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909020824469_withInitializer.resx">
-      <DependentUpon>201909020824469_withInitializer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909021015419_personChairRelation.resx">
-      <DependentUpon>201909021015419_personChairRelation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909030653308_floorData.resx">
-      <DependentUpon>201909030653308_floorData.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909030824377_initializeAll.resx">
-      <DependentUpon>201909030824377_initializeAll.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909050747243_newFloorAttribute.resx">
-      <DependentUpon>201909050747243_newFloorAttribute.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909060755489_changesAboutRelations.resx">
-      <DependentUpon>201909060755489_changesAboutRelations.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909110847443_Change2.resx">
-      <DependentUpon>201909110847443_Change2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201909121439119_initial.resx">
+      <DependentUpon>201909121439119_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

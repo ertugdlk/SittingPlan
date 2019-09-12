@@ -1,4 +1,4 @@
-namespace SittingPlan.Data.Migrations
+namespace SittingPlan.Data.Migrations.MyHistory
 {
     using System;
     using System.Data.Entity.Migrations;
