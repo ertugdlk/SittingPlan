@@ -39,10 +39,24 @@ namespace SittingPlan.Web.Controllers
             return Ok();
         }
 
+        [HttpPost]
+        public IHttpActionResult NotSeat([FromBody]Chairr info)
+        {
+            repochair.removePersontoChair(info.chairid);
+            return Ok("true");
+        }
+
+
         public class ChairWithPerson
         {
             public int chairid { get; set; }
             public int personid { get; set; }
+        }
+
+        public class Chairr
+        {
+            public int chairid { get; set; }
+
         }
 
         public class ChairClass

@@ -52,11 +52,10 @@
     <Compile Include="Entities\Desk.cs" />
     <Compile Include="Entities\Floor.cs" />
     <Compile Include="Entities\Person.cs" />
-    <Compile Include="Entities\SittingPeople.cs" />
     <Compile Include="Initializers\DeskDbInitializer.cs" />
-    <Compile Include="Migrations\201909121439119_initial.cs" />
-    <Compile Include="Migrations\201909121439119_initial.Designer.cs">
-      <DependentUpon>201909121439119_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201909131111057_initial.cs" />
+    <Compile Include="Migrations\201909131111057_initial.Designer.cs">
+      <DependentUpon>201909131111057_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\ChairRepository.cs" />
@@ -71,8 +70,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201909121439119_initial.resx">
-      <DependentUpon>201909121439119_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201909131111057_initial.resx">
+      <DependentUpon>201909131111057_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

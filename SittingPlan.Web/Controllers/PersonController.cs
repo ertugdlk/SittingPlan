@@ -18,6 +18,14 @@ namespace SittingPlan.Web.Controllers
             return getp;
         }
 
+        //get not sitting people list
+        [HttpGet]
+        public IEnumerable<Person> GetNotSeated()
+        {
+            var getnotseated = personrepo.GetNotSittingPeople();
+            return getnotseated;
+        }
+
         //Person Generate
         [HttpPost]
         public IHttpActionResult Post([FromBody]PersonClass info)

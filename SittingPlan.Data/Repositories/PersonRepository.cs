@@ -21,6 +21,17 @@ namespace SittingPlan.Data.Repositories
             return people;
         }
 
+        public List<Person> GetNotSittingPeople()
+        {
+            var people = new List<Person>();
+            using (var context = new SittingPlanContext())
+            {
+                string query = "SELECT* FROM People P WHERE Id NOT IN(SELECT PersonId FROM Chairs C WHERE C.PersonId = P.Id)";
+                people = context.Database.SqlQuery<Person>(query).ToList();                           
+            }
+            return people;
+        }
+
         //add person with return people
         public List<Person> AddPersonwithList(Person p)
         {
@@ -40,7 +51,7 @@ namespace SittingPlan.Data.Repositories
             using (var context = new SittingPlanContext())
             {
                 context.People.Add(p);
-                context.SaveChanges();         
+                context.SaveChanges();
             }
         }
 

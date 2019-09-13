@@ -14,10 +14,9 @@ namespace SittingPlan.Data.Repositories
         public List<Chair> GetAll()
         {
             var chairs = new List<Chair>();
-            //GET REAL DESKS FROM DB WITH ENTITY FRAMEWORK
             using (var context = new SittingPlanContext())
             {
-                //chairs = context.Chairs.Where(x => x.Id > 0).Include(p=> p.Person).OrderBy(x => x.Person.Name).ToList();
+                chairs = context.Chairs.Where(x => x.Id > 0).Include(p=> p.Person).OrderBy(x => x.Person.Id).ToList();
             }
             return chairs;
         }
@@ -44,6 +43,18 @@ namespace SittingPlan.Data.Repositories
             }
         }
 
+        public void removePersontoChair(int chairid)
+        {
+            using (var context = new SittingPlanContext())
+            {
+                var chair = context.Chairs.Find(chairid);
+                chair.PersonId = null;
+                chair.Person = null;
+                context.SaveChanges();
+            }
+
+        }
+
         //add person to chair
         public void addPersontoChair(int personid , int chairid)
         {
@@ -51,7 +62,8 @@ namespace SittingPlan.Data.Repositories
             {
                 var chair = context.Chairs.Find(chairid);
                 var person = context.People.Find(personid);
-                //chair.Person = person;
+                chair.PersonId = personid;
+                chair.Person = person;
                 context.SaveChanges();
             }
         }

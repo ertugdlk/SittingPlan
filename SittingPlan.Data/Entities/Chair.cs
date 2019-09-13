@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace SittingPlan.Data.Entities
 {
-        public class Chair
-        {
-            [Key]
-            public int Id { get; set; }          
-            public int DeskId { get; set; }
-            public Desk Desk { get; set; }
-            [ForeignKey("Id")]
-            public virtual ChairPeople StPeople { get; set; }
-
+    public class Chair
+    {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+        public int DeskId { get; set; }
+        public int? PersonId { get; set; }
+        public Desk Desk { get; set; }
+        [ForeignKey("PersonId")]
+        public Person Person { get; set;}
     }   
 }

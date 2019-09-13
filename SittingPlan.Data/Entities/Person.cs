@@ -15,8 +15,5 @@ namespace SittingPlan.Data.Entities
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Mail { get; set; }
-        [ForeignKey("Id")]
-        public virtual ChairPeople StPeople { get; set; }
-
     }
 }
