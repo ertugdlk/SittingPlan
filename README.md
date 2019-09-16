@@ -16,7 +16,16 @@ with Fluent APIs and Data Annotations.
 ## Running locally
 
 Clone this project or download it. After that you should configure your own EntityFramework connection strings in SittingPlan.Web
-Web.config and also SittingPlan.Data App.Config. On the side you can update your database typing "update-database 
+Web.config and also SittingPlan.Data App.Config. 
+
+```
+  <connectionStrings>
+    <add name="SittingPlan" connectionString="Application Name=SittingPlan; server=SQLTEST; database=SittingPlan; uid=SittingPlanUser;password=123456; Pooling=false" providerName="System.Data.SqlClient" />
+  </connectionStrings>
+
+```
+
+On the side you can update your database typing "update-database 
 on "Package Manager Console" (Tools>NuGet Packet Manager). 
 Front-End side of project https://github.com/mrtdmrmrt/VueJs-SittingPlan.
 
