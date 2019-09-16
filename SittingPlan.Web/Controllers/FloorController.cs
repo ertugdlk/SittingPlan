@@ -22,10 +22,10 @@ namespace SittingPlan.Web.Controllers
         }
 
         //api/floor/get?floorid={} gets all floor with all information of other entities
-        public IEnumerable<Desk> Get(int floorid)
+        public IEnumerable<Floor> GetAllPlan()
         {
          
-            return repofloor.GetDesks(floorid); ;
+            return repofloor.GetPlan(); ;
         }
 
         //Floor Generate

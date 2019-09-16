@@ -20,15 +20,14 @@ namespace SittingPlan.Data.Repositories
             return floors;
         }
 
-        public List<Desk> GetDesks(int floorid)
+        public List<Floor> GetPlan()
         {
-            var desks = new List<Desk>();
+            var floors = new List<Floor>();
             using (var Context = new SittingPlanContext())
             {
-                desks = Context.Desk.Where(p => p.FloorId == floorid).Include(p => p.Chairs.Select(x=> x.Person)).ToList();
+                floors =  Context.Floors.Include(p => p.Desks.Select(x => x.Chairs.Select(y => y.Person))).ToList();
             }
-            return desks;
-
+            return floors;
         }
 
         public void AddFloor(string name)
