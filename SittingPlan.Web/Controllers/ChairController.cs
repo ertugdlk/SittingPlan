@@ -15,7 +15,6 @@ namespace SittingPlan.Web.Controllers
     {
         ChairRepository repochair = new ChairRepository();
 
-        //chairs list
         public IEnumerable<Chair> Get()
         {
             var repochair = new ChairRepository();
@@ -23,7 +22,6 @@ namespace SittingPlan.Web.Controllers
             return getchairs;
         }
 
-        //generate empty chair on desk post method
         [HttpPost]
         public IHttpActionResult Post([FromBody]ChairClass info)
         {
@@ -31,7 +29,6 @@ namespace SittingPlan.Web.Controllers
             return Ok();
         }
 
-        //Seat person to chair post method
         [HttpPost]
         public IHttpActionResult Seat([FromBody]ChairWithPerson info)
         {
@@ -56,7 +53,6 @@ namespace SittingPlan.Web.Controllers
         public class Chairr
         {
             public int chairid { get; set; }
-
         }
 
         public class ChairClass

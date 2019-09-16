@@ -9,11 +9,9 @@ namespace SittingPlan.Data.Repositories
 {
     public class PersonRepository
     {
-        //list of people
         public List<Person> GetAll()
         {
             var people = new List<Person>();
-            //GET REAL PEOPLE FROM DB WITH ENTITY FRAMEWORK
             using (var sittingPlanContext = new SittingPlanContext())
             {
                 people = sittingPlanContext.People.Where(p => p.Id > 0).OrderBy(p => p.Name).ToList();
@@ -32,7 +30,6 @@ namespace SittingPlan.Data.Repositories
             return people;
         }
 
-        //add person with return people
         public List<Person> AddPersonwithList(Person p)
         {
             var people = new List<Person>();
@@ -45,7 +42,6 @@ namespace SittingPlan.Data.Repositories
             return people;
         }
 
-        //add person with info
         public void AddPerson(Person p)
         {
             using (var context = new SittingPlanContext())
@@ -55,7 +51,6 @@ namespace SittingPlan.Data.Repositories
             }
         }
 
-        //create person without id
         public void AddPerson(string name, string surname, string mail)
         {
             var p = new Person()

@@ -10,7 +10,6 @@ namespace SittingPlan.Data.Repositories
 {
     public class ChairRepository
     {
-        //list of chairs
         public List<Chair> GetAll()
         {
             var chairs = new List<Chair>();
@@ -21,7 +20,6 @@ namespace SittingPlan.Data.Repositories
             return chairs;
         }
 
-        //add chair with information
         public  void AddChair(Chair c)
         {
             using (var context = new SittingPlanContext())
@@ -31,7 +29,6 @@ namespace SittingPlan.Data.Repositories
             };
         }
 
-        //empty chair with deskid
         public void AddEmptyChair(int deskId)
         {
             var chair = new Chair();
@@ -55,7 +52,6 @@ namespace SittingPlan.Data.Repositories
 
         }
 
-        //add person to chair
         public void addPersontoChair(int personid , int chairid)
         {
             using (var context = new SittingPlanContext())

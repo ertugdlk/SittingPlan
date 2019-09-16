@@ -21,7 +21,7 @@ namespace SittingPlan.Web.Controllers
             return repofloor.GetAll();
         }
 
-        //Desk list of selected floorid
+        //api/floor/get?floorid={} gets all floor with all information of other entities
         public IEnumerable<Desk> Get(int floorid)
         {
          

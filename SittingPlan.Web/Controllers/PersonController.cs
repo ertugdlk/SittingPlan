@@ -11,14 +11,12 @@ namespace SittingPlan.Web.Controllers
     {
         PersonRepository personrepo = new PersonRepository();
 
-        //People list
         public IEnumerable<Person> Get()
         {
             var getp = personrepo.GetAll();
             return getp;
         }
 
-        //get not sitting people list
         [HttpGet]
         public IEnumerable<Person> GetNotSeated()
         {
@@ -26,7 +24,6 @@ namespace SittingPlan.Web.Controllers
             return getnotseated;
         }
 
-        //Person Generate
         [HttpPost]
         public IHttpActionResult Post([FromBody]PersonClass info)
         {

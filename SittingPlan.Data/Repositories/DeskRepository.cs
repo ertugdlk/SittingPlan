@@ -7,11 +7,9 @@ namespace SittingPlan.Data.Repositories
 {
     public class DeskRepository
     {
-        //list of desks
         public List<Desk> GetAll()
         {
             var desks = new List<Desk>();
-            //GET REAL DESKS FROM DB WITH ENTITY FRAMEWORK
             using (var sittingPlanContext = new SittingPlanContext())
             {
                 desks = sittingPlanContext.Desk.Where(p => p.Id > 0).OrderBy(p => p.Name).ToList();
@@ -19,18 +17,16 @@ namespace SittingPlan.Data.Repositories
             return desks;
         }
 
-        //list o
         public List<Chair> GetChairs(int deskid)
         {
             var chairs = new List<Chair>();
             using (var context  = new SittingPlanContext())
             {
-                chairs = context.Chairs.Where(p => p.DeskId == deskid).OrderBy(p => p.Id).ToList();
+                chairs = context.Chairs.Where(p => p.DeskId == deskid).Include(p=>p.Person).OrderBy(p => p.Id).ToList();
             }
             return chairs;
         }
 
-        //add desk with info
         public void AddDesk(Desk d)
         {          
             using (var context = new SittingPlanContext())
@@ -40,7 +36,6 @@ namespace SittingPlan.Data.Repositories
             };
         }
 
-        //create empty Desk
         public void AddDesk(string name , int floorid)
         {
             var desk = new Desk();
