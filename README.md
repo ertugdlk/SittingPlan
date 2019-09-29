@@ -8,8 +8,6 @@ Main purpose of project, users can know each other easily and ease of communicat
 SittingPlan helps employees to find out floor plan with all desks,chairs with person information on website. Users able to 
 create their own floor plan with it. In Adittion , users will change sitting plan .
 
-## Discussion
-
 API allows users to post and get transactions like lists of entites or create them with relationships. Relations prepared with code first between entities. Relations were made
 with Fluent APIs and Data Annotations.
 
