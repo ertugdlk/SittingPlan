@@ -14,7 +14,7 @@ with Fluent APIs and Data Annotations.
 ## Running locally
 
 Clone this project or download it. After that you should configure your own EntityFramework connection strings in SittingPlan.Web
-Web.config and also SittingPlan.Data App.Config. 
+Web.config and also SittingPlan.Data App.Config and also SittingPlan.Web Config. 
 
 ```
   <connectionStrings>
